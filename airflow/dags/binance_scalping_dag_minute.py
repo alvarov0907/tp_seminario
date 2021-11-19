@@ -2,7 +2,7 @@
 TP SEMINARIO. 
 Alumnos: Alvaro Vanina y Ariel Belossi
 
-Get scalping signals in binance in temporality of 5 minutes.
+Get scalping signals in binance in temporality of 15 minutes.
 ----------------------------------
 
 1) Create table binance_market if not exists in schema workshop in postgres
@@ -134,7 +134,7 @@ def _get_scalping_data(symbol,tick,exec_date):
 # dag definition
 with DAG(
     dag_id="tp_seminario_binance_scalping_minute",
-    description="Get Binance Scalping data for 5 min. Temporality",
+    description="Get Binance Scalping data for 15 min. Temporality",
     start_date=datetime(2021, 11, 16),
     schedule_interval="* * * * *", # “At every minute.”
     catchup=False,
